@@ -1,12 +1,13 @@
-import ArtPieces from "../components/ArtPieces";
-/* import { SWRConfig } from "swr"; */
+import Spotlight from "../components/Spotlight";
+import Link from "next/link";
+import Navigation from "../components/Navigation";
 
-/* const fetcher = (url) => fetch(url).then((res) => res.json()); */
-
-export default function HomePage() {
+export default function SpotlightPage({ data }) {
   return (
     <div>
-      <ArtPieces />
+      <Spotlight data={data} />
+      <Link href="/pieces">zu den Bildern</Link>
+      <Navigation />
     </div>
   );
 }
