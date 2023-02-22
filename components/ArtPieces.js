@@ -1,11 +1,6 @@
-import useSWR from "swr";
 import Image from "next/image";
 
-const URL = `https://example-apis.vercel.app/api/art`;
-
-export default function ArtPieces({ pieces }) {
-  const fetcher = (url) => fetch(url).then((response) => response.json());
-  const { data, error } = useSWR(URL, fetcher);
+export default function ArtPieces({ data, error }) {
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
