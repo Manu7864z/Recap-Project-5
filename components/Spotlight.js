@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 export default function Spotlight({ data }) {
   const random = Math.floor(Math.random() * data?.length);
   const randomPiece = data?.[random];
