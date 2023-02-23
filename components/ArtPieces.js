@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtPieces({ data, error }) {
-
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
   console.log(data);
@@ -20,6 +20,7 @@ export default function ArtPieces({ data, error }) {
               height={600}
               width={600}
             />
+            <Link href={`/pieces/${piece.slug}`}>blub</Link>
           </li>
         ))}
       </ul>

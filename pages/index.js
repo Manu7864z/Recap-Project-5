@@ -6,8 +6,7 @@ export default function SpotlightPage({ data }) {
   return (
     <div>
       <Spotlight data={data} />
-      <Link href="/pieces">zu den Bildern</Link>
-      <Navigation />
+      <Link href="/pieces/pieces">zu den Bildern</Link>
     </div>
   );
 }
