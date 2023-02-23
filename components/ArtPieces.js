@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "./FavoriteButton";
+import { useState } from "react";
 
 export default function ArtPieces({ data, error }) {
+  const [isFavorite, setIsFavorite]= useState(true);
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
   console.log(data);
@@ -21,6 +24,7 @@ export default function ArtPieces({ data, error }) {
               width={600}
             />
             <Link href={`/pieces/${piece.slug}`}>blub</Link>
+          <FavoriteButton setIsFavorite={setIsFavorite} isFavorite={isFavorite}></FavoriteButton>
           </li>
         ))}
       </ul>
